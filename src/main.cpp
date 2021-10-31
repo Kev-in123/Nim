@@ -3,9 +3,8 @@
 
 int main()
 {
-	Nim nim;
-    int in;
-    int ai;
+    Nim nim;
+    int in, ai;
     std::cout << "Welcome to Nim!\n";
     std::cout << "The person who takes the last stone loses\n\n";
 	while (nim.get_pile() > 0) {
