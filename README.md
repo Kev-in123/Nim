@@ -1,3 +1,3 @@
 # Nim
 
-half broken and im too lazy to fix atm
+half broken and im too lazy to fix rn
