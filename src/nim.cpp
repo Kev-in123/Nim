@@ -15,7 +15,10 @@ int Nim::ai_choice() {
 		return 4;
 	}
 
-	int n = this -> choices[(rand() * 3) + 1];
+	int n = this -> choices[rand() % 3];
+	while (!validEntry(n)) {
+		n = this -> choices[rand() % 3];
+	}
 	this -> pile -= n;
 	return n;
 }
