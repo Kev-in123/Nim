@@ -1,8 +1,10 @@
 #include <iostream>
+#include <random>
 #include "nim.h"
 
 int main()
 {
+    srand(time(NULL));
     Nim nim;
     int in, ai;
     std::cout << "Welcome to Nim!\n";
