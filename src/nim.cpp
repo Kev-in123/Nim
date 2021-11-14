@@ -2,36 +2,26 @@
 #include "nim.h"
 
 int Nim::ai_choice() {
-	if ((this -> pile - 1) % 4 == 1) {
-		this -> pile -= 1;
-		return 1;
+	for (int i = 1; i < 4; i++) {
+		if ((pile - i) % 4 == 1) {
+			return i;
+		}
 	}
-	if ((this -> pile - 3) % 4 == 1) {
-		this -> pile -= 3;
-		return 3;
-	}
-	if ((this -> pile - 4) % 4 == 1) {
-		this -> pile -= 4;
-		return 4;
-	}
-
-	int n = this -> choices[rand() % 3];
+	int n = (rand() % 3) + 1;
 	while (!validEntry(n)) {
-		n = this -> choices[rand() % 3];
+		n = (rand() % 3) + 1;
 	}
-	this -> pile -= n;
 	return n;
 }
 
 int Nim::get_pile() {
-	return this -> pile;
+	return this->pile;
 }
 
 bool Nim::validEntry(int choice) {
-	return (choice == 1 || choice == 3 || choice == 4) && choice <= this -> pile;
+	return (1 <= choice && choice <= 3) && choice <= this->pile;
 }
 
 void Nim::remove_stone(int n) {
-	this -> pile -= n;
+	this->pile -= n;
 }
-
