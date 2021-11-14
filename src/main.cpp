@@ -15,15 +15,10 @@ int main()
             std::cout << "How many stones would you like to take (1, 3, 4): "; std::cin >> in;
         }
         nim.remove_stone(in);
-	if (nim.get_pile()  == 1) {
-            std::cout << "You win!";
-            return 0;
-        }
         if (nim.get_pile() == 0) {
             std::cout << "You lose!";
             return 0;
         }
-
         ai = nim.ai_choice();
         std::cout << "The AI took " << ai << " stones\n\n";
         if (nim.get_pile() == 0) {
