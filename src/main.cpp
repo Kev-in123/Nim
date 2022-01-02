@@ -1,5 +1,6 @@
 #include <iostream>
 #include <random>
+#include <time.h>
 #include "nim.h"
 
 int main()
